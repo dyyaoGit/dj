@@ -25,3 +25,13 @@
     export default{}
 </script>
 
+<style>
+  .tabs-striped .tabs {
+    border-bottom: none;
+    border-top: 1px solid #ddd!important;
+  }
+  .tabs>.tab-item.active {
+    border-top: 2px solid rgba(0,0,0, 0)!important;
+  }
+</style>
+

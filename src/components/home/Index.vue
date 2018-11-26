@@ -6,8 +6,8 @@
     </div>
     <div class="scroll-content has-tabs has-header">
       <div class="banner">
-        <swiper :options="swiperOption">
-          <swiper-slide style="position: relative" v-for="item in list" :key="item.id">
+        <swiper :options="swiperOption" style="height: 187px">
+          <swiper-slide style="position: relative" v-for="item in list" :key="item.id" class="swiper-item">
             <a :href="'#/newsDetail/'+item.url" class="news-item ">
               <div :style="{backgroundImage: 'url(' + item.imgUrl + ')'}" class="bg-img">
                 <img src="../../assets/bg2x1.png"/>
@@ -104,6 +104,7 @@
           type: 0
         }
       }).then(function (res) {
+        console.log(self);
         self.list = res.data.rows;
       })
     },
@@ -115,11 +116,17 @@
   }
 
   .bg-img {
+    height: 187.5px;
     background-size: cover;
     background-position: center;
   }
 
+  .swiper-item {
+    height: 187.5px;
+  }
+
   .bg-img, .bg-img img {
+    display: block;
     width: 100%;
   }
 
@@ -135,7 +142,14 @@
   }
 
   .swiper-pagination-bullet {
-    opacity: .6 !important;
-    background: #c94a4a;
+    opacity: .6;
   }
+
+
+
+  .swiper-pagination-bullet-active {
+    background: #007aff;
+    opacity: 1;
+  }
+
 </style>
