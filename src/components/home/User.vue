@@ -47,8 +47,13 @@
 
       </div>
       <div style="padding: 10px;">
-        <input v-if="isLogin" type="button " class="button button-block button-assertive" value="退出登录"
-               @click="exit">
+        <button
+          v-if="isLogin"  class="button button-block button-assertive"
+          @click="exit">
+          退出登录
+        </button>
+        <!--<input v-if="isLogin" type="button " class="button button-block button-assertive" value="退出登录"-->
+               <!--@click="exit" />-->
       </div>
     </div>
 

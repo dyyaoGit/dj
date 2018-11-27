@@ -17,6 +17,7 @@ export  default new Vuex.Store({
       if (obj) {
         state.token = obj.token;
         localStorage.setItem("token", obj.token);
+        console.log(obj.user)
         state.userInfo = obj.user;
         state.select_branch = obj.user.branchId;
         axios.defaults.headers.common['token'] = obj.token
@@ -24,7 +25,36 @@ export  default new Vuex.Store({
     },
     removeToken:function (state) {
       state.token = '00';
-      state.userInfo = null;
+      state.userInfo = {
+        address: '',
+        age: '',
+        birthday: '',
+        branchId: '',
+        branchName: '',
+        count: '',
+        disabled: '',
+        education: '',
+        header: '',
+        hometown: '',
+        id: '',
+        idCard: '',
+        jobRank: '',
+        joinPartyTime: '',
+        lastPayTime: '',
+        leadPerson: '',
+        nation: '',
+        partyIdentity: '',
+        partyStatus: '',
+        password: '',
+        phone: '',
+        qqNum: '',
+        salary: '',
+        sex: '',
+        special: '',
+        totalScore: '',
+        username: '',
+        wxNum: ''
+      };
       localStorage.removeItem('token');
       axios.defaults.headers.common['token'] = '00';
     }
