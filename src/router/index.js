@@ -42,6 +42,7 @@ import  NewsDetail from '@/components/news/Newsdetail'
 
 Vue.use(Router)
 let route= new Router({
+  mode: 'history',
   linkActiveClass:'active',
   routes: [
     /*首页、通知、我的*/

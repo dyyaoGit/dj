@@ -8,12 +8,12 @@
       <div class="banner">
         <swiper :options="swiperOption" style="height: 187px">
           <swiper-slide style="position: relative" v-for="item in list" :key="item.id" class="swiper-item">
-            <a :href="'#/newsDetail/'+item.url" class="news-item ">
+            <router-link :to="'#/newsDetail/'+item.url" class="news-item ">
               <div :style="{backgroundImage: 'url(' + item.imgUrl + ')'}" class="bg-img">
                 <img src="../../assets/bg2x1.png"/>
               </div>
               <div class="slide_text" style=" ">{{item.title}}</div>
-            </a>
+            </router-link>
 
           </swiper-slide>
 
