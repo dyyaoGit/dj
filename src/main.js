@@ -43,6 +43,7 @@ router.beforeEach((to, from, next)=> {
   function jsMethod() {
     location.href = `hs://call_?${to.path}`
   }
+  jsMethod()
   if (to.meta.requireAuth && store.state.token.length<=2) {
     next({
       path: '/login',
