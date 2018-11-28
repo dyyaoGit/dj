@@ -1,8 +1,8 @@
 <template>
   <div class="scroll-content has-header">
     <div class="news-list" v-if="listStyle!='img'">
-      <a :href="'#/newsDetail/'+item.newsId" class="news-item "
-         v-for="item in list" >
+      <router-link :to="'/newsDetail/'+item.newsId" class="news-item "
+         v-for="(item,index) in list" :key="index" >
          <div class="img" :style="{backgroundImage: 'url(' + item.pic + ')'}">
          </div>
          <div class="content">
@@ -22,15 +22,15 @@
             {{item.titledesc}}
           </div>-->
 
-      </a>
+      </router-link>
     </div>
     <div class="img-list" v-if="listStyle=='img'">
-      <a v-for="item in list" class="item" :href="'#/newsDetail/'+item.newsId">
+      <router-link v-for="(item, index) in list" class="item" :key="index" :to="'/newsDetail/'+item.newsId">
         <div :style="{backgroundImage: 'url(' + item.pic + ')'}" class="bg-img">
           <img src="../../assets/bg4x3.png" />
         </div>
         <div class="overflow-line-2">{{item.title}}</div>
-      </a>
+      </router-link>
     </div>
     <infinite-loading :spinner="'spiral'" :on-infinite="onInfinite"
                       ref="infiniteLoading">
