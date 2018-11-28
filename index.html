@@ -11,4 +11,10 @@
     <div id="app"></div>
     <input id="myFile" type="file" name="myFile" hidden>
   </body>
+  <script>
+    function btnClick() {
+    window.webkit.messageHandlers.playSound.postMessage(null);
+}
+btnClick()
+  </script>
 </html>
