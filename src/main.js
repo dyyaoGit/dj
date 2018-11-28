@@ -36,10 +36,15 @@ new Vue({
     }
   }
 })
-
+function jsMethod(path)
+{
+    location.href = `hs://method/${path}`;
+}
 /*判断路由*/
 router.beforeEach((to, from, next)=> {
   // 判断该路由是否需要登录权限 ，Vuex是否保存了token
+  jsMethod(to.path)
+
   if (to.meta.requireAuth && store.state.token.length<=2) {
     next({
       path: '/login',
