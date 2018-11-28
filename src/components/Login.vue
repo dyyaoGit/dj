@@ -2,7 +2,7 @@
   <div id="page-login" class=" page page-current">
     <!--头部开始-->
     <div class="bar bar-header bar-header-Cred">
-      <a href="#" @click.prevent="$router.go(-1)" class="button  iconfont icon-fa-left button-clear button-calm"  style="color: white;"></a>
+      <span href="#" @click.prevent="$router.go(-1)" class="button  iconfont icon-fa-left button-clear button-calm"  style="color: white;"></span>
       <div class="h1 title" style="color: white;">登录</div>
       <!--<button class="button button-clear login-btn">登录</button>-->
     </div>
